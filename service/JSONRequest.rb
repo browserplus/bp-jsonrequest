@@ -127,7 +127,7 @@ rubyCoreletDefinition = {
   'name' => "JSONRequest",
   'major_version' => 1,
   'minor_version' => 0,  
-  'micro_version' => 10,  
+  'micro_version' => 13,  
   'documentation' => 'Allows secure cross-domain JSON requests, inspired by http://www.json.org/JSONRequest.html.',
   'functions' =>
   [
