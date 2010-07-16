@@ -6,6 +6,8 @@
 # (c) Yahoo 2007, all rights reserved
 #####
 
+cmake_minimum_required(VERSION 2.6)
+
 # looser syntax
 SET(CMAKE_ALLOW_LOOSE_LOOP_CONSTRUCTS 1)
 
@@ -43,5 +45,3 @@ FOREACH(src ${srcs})
 ENDFOREACH()
 
 ADD_CUSTOM_TARGET(${coreletName} ALL DEPENDS ${allDeps})
-
-SETUP_CORELET_PUBLISHING(${coreletName})
