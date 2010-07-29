@@ -6,9 +6,9 @@ require 'uri'
 require 'test/unit'
 require 'open-uri'
 
-class TestArchiver < Test::Unit::TestCase
+class TestJSONRequest < Test::Unit::TestCase
   def setup
-    subdir = 'build/Archiver'
+    subdir = 'build/JSONRequest'
     if ENV.key?('BP_OUTPUT_DIR')
       subdir = ENV['BP_OUTPUT_DIR']
     end
