@@ -1,16 +1,16 @@
 {
-  "arguments": {
-    "ScriptFile": "JSONRequest.rb"
+  "type":"dependent",
+  "arguments":{
+    "ScriptFile":"JSONRequest.rb"
   },
-  "uses": {
-    "corelet": "RubyInterpreter",
-    "version": "4"
+  "uses":{
+    "corelet":"RubyInterpreter",
+    "version":"4"
   },
-  "type": "dependent",
-  "strings": {
-    "en": {
-      "title": "JSON Request Component",
-      "summary": "Allows secure cross domain JSON requests, inspired by http://www.json.org/JSONRequest.html."
+  "strings":{
+    "en":{
+      "title":"JSON Request Component",
+      "summary":"Allows secure cross domain JSON requests, inspired by http://www.json.org/JSONRequest.html."
     }
   }
 }
