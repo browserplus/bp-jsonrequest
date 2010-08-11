@@ -1,12 +1,12 @@
 {
-  "type": "dependent",
+  "arguments": {
+    "ScriptFile": "JSONRequest.rb"
+  },
   "uses": {
     "corelet": "RubyInterpreter",
     "version": "4"
   },
-  "arguments": {
-    "ScriptFile": "JSONRequest.rb"
-  },
+  "type": "dependent",
   "strings": {
     "en": {
       "title": "JSON Request Component",
