@@ -18,8 +18,12 @@ class TestJSONRequest < Test::Unit::TestCase
     end
     @cwd = File.dirname(File.expand_path(__FILE__))
     @service = File.join(@cwd, "../#{subdir}")
+    nulldevice = "/dev/null"
+    if CONFIG['arch'] =~ /mswin|mingw/
+      nulldevice = "NUL"
+    end
     @server = HTTPServer.new(:Port => 0,
-                             :Logger => WEBrick::Log.new('/dev/null'),
+                             :Logger => WEBrick::Log.new(nulldevice),
                              :AccessLog => [nil],
                              :BindAddress => "127.0.0.1")
     @urlLocal = "http://localhost:#{@server[:Port]}/"
