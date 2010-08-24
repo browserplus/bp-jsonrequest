@@ -71,7 +71,7 @@ class TestJSONRequest < Test::Unit::TestCase
   # values as in your doGET.json and doPOST.json.
   def test_serverSH_1
     # NEEDSWORK!!!  Need to figure out how to host RubyInterpreter to get these tests running
-    #BrowserPlus.run(@service) { |s|
+    #BrowserPlus::Service.new(@service) { |s|
     #  private_setup(s)
     #  r = @i.get({ "url" => @url })
     #  want = @wantjson['graham']
@@ -80,12 +80,13 @@ class TestJSONRequest < Test::Unit::TestCase
     #  want = @wantjson['nutella']
     #  got = r['nutella']
     #  assert_equal(want, got)
+    #  s.shutdown()
     #}
   end
 
   def test_serverSH_2
     # NEEDSWORK!!!  Need to figure out how to host RubyInterpreter to get these tests running
-    #BrowserPlus.run(@service) { |s|
+    #BrowserPlus::Service.new(@service) { |s|
     #  private_setup(s)
     #  r = @i.get({ "url" => @url, 'timeout' => @json["timeout"] })
     #  want = @wantjson['graham']
@@ -94,48 +95,53 @@ class TestJSONRequest < Test::Unit::TestCase
     #  want = @wantjson['nutella']
     #  got = r['nutella']
     #  assert_equal(want, got)
+    #  s.shutdown()
     #}
   end
 
   def test_serverSH_3
     # NEEDSWORK!!!  Need to figure out how to host RubyInterpreter to get these tests running
-    #BrowserPlus.run(@service) { |s|
+    #BrowserPlus::Service.new(@service) { |s|
     #  private_setup(s)
     #  r = @i.post({ "url" => @url, 'send' => @path1 })
     #  want = JSON.parse(File.read(File.join(@wantfile, "doPOST.json")))['post']
     #  got = r['post']
     #  assert_equal(want, got)
+    #  s.shutdown()
     #}
   end
 
   def test_serverSH_4
     # NEEDSWORK!!!  Need to figure out how to host RubyInterpreter to get these tests running
-    #BrowserPlus.run(@service) { |s|
+    #BrowserPlus::Service.new(@service) { |s|
     #  private_setup(s)
     #  r = @i.post({ "url" => @url, 'send' => @path1, 'timeout' => @json["timeout"] })
     #  want = JSON.parse(File.read(File.join(@wantfile, "doPOST.json")))['post']
     #  got = r['post']
     #  assert_equal(want, got)
+    #  s.shutdown()
     #}
   end
 
   def test_serverSH_5
     # NEEDSWORK!!!  Need to figure out how to host RubyInterpreter to get these tests running
-    #BrowserPlus.run(@service) { |s|
+    #BrowserPlus::Service.new(@service) { |s|
     #  private_setup(s)
     #  # Negative test cases.
     #  @server.mount("/", OnlyPOST)
     #  assert_raise(RuntimError) { r = @i.get({ "url" => @url }) }
+    #  s.shutdown()
     #}
   end
 
   def test_serverSH_6
     # NEEDSWORK!!!  Need to figure out how to host RubyInterpreter to get these tests running
-    #BrowserPlus.run(@service) { |s|
+    #BrowserPlus::Service.new(@service) { |s|
     #  private_setup(s)
     #  # Negative test cases.
     #  @server.mount("/", OnlyGET)
     #  assert_raise(RuntimeError) { r = @i.post({ "url" => @url }) }
+    #  s.shutdown()
     #}
   end
 end
