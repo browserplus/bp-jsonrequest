@@ -18,6 +18,7 @@ class TestJSONRequest < Test::Unit::TestCase
     end
     @cwd = File.dirname(File.expand_path(__FILE__))
     @service = File.join(@cwd, "../#{subdir}")
+    @providerDir = File.expand_path(File.join(@cwd, "providerDir"))
     nulldevice = "/dev/null"
     if CONFIG['arch'] =~ /mswin|mingw/
       nulldevice = "NUL"
@@ -60,9 +61,9 @@ class TestJSONRequest < Test::Unit::TestCase
   end
 
   def test_load_service
-    # NEEDSWORK!!!  Need to figure out how to host RubyInterpreter to get these tests running
-    #BrowserPlus.run(@service) { |s|
-    #}
+  # NEEDSWORK!!!  ProviderService stuff needs to work
+  #  BrowserPlus.run(@service, @providerDir) { |s|
+  #  }
   end
 
 
@@ -70,78 +71,78 @@ class TestJSONRequest < Test::Unit::TestCase
   # and then verify that it has the same keys and
   # values as in your doGET.json and doPOST.json.
   def test_serverSH_1
-    # NEEDSWORK!!!  Need to figure out how to host RubyInterpreter to get these tests running
-    #BrowserPlus::Service.new(@service) { |s|
-    #  private_setup(s)
-    #  r = @i.get({ "url" => @url })
-    #  want = @wantjson['graham']
-    #  got = r['graham']
-    #  assert_equal(want, got)
-    #  want = @wantjson['nutella']
-    #  got = r['nutella']
-    #  assert_equal(want, got)
-    #  s.shutdown()
-    #}
+  # NEEDSWORK!!!  ProviderService stuff needs to work
+  #  BrowserPlus::Service.new(@service, @providerDir) { |s|
+  #    private_setup(s)
+  #    r = @i.get({ "url" => @url })
+  #    want = @wantjson['graham']
+  #    got = r['graham']
+  #    assert_equal(want, got)
+  #    want = @wantjson['nutella']
+  #    got = r['nutella']
+  #    assert_equal(want, got)
+  #    s.shutdown()
+  #  }
   end
 
   def test_serverSH_2
-    # NEEDSWORK!!!  Need to figure out how to host RubyInterpreter to get these tests running
-    #BrowserPlus::Service.new(@service) { |s|
-    #  private_setup(s)
-    #  r = @i.get({ "url" => @url, 'timeout' => @json["timeout"] })
-    #  want = @wantjson['graham']
-    #  got = r['graham']
-    #  assert_equal(want, got)
-    #  want = @wantjson['nutella']
-    #  got = r['nutella']
-    #  assert_equal(want, got)
-    #  s.shutdown()
-    #}
+  # NEEDSWORK!!!  ProviderService stuff needs to work
+  #  BrowserPlus::Service.new(@service, @providerDir) { |s|
+  #    private_setup(s)
+  #    r = @i.get({ "url" => @url, 'timeout' => @json["timeout"] })
+  #    want = @wantjson['graham']
+  #    got = r['graham']
+  #    assert_equal(want, got)
+  #    want = @wantjson['nutella']
+  #    got = r['nutella']
+  #    assert_equal(want, got)
+  #    s.shutdown()
+  #  }
   end
 
   def test_serverSH_3
-    # NEEDSWORK!!!  Need to figure out how to host RubyInterpreter to get these tests running
-    #BrowserPlus::Service.new(@service) { |s|
-    #  private_setup(s)
-    #  r = @i.post({ "url" => @url, 'send' => @path1 })
-    #  want = JSON.parse(File.read(File.join(@wantfile, "doPOST.json")))['post']
-    #  got = r['post']
-    #  assert_equal(want, got)
-    #  s.shutdown()
-    #}
+  # NEEDSWORK!!!  ProviderService stuff needs to work
+  #  BrowserPlus::Service.new(@service, @providerDir) { |s|
+  #    private_setup(s)
+  #    r = @i.post({ "url" => @url, 'send' => @path1 })
+  #    want = JSON.parse(File.read(File.join(@wantfile, "doPOST.json")))['post']
+  #    got = r['post']
+  #    assert_equal(want, got)
+  #    s.shutdown()
+  #  }
   end
 
   def test_serverSH_4
-    # NEEDSWORK!!!  Need to figure out how to host RubyInterpreter to get these tests running
-    #BrowserPlus::Service.new(@service) { |s|
-    #  private_setup(s)
-    #  r = @i.post({ "url" => @url, 'send' => @path1, 'timeout' => @json["timeout"] })
-    #  want = JSON.parse(File.read(File.join(@wantfile, "doPOST.json")))['post']
-    #  got = r['post']
-    #  assert_equal(want, got)
-    #  s.shutdown()
-    #}
+  # NEEDSWORK!!!  ProviderService stuff needs to work
+  #  BrowserPlus::Service.new(@service, @providerDir) { |s|
+  #    private_setup(s)
+  #    r = @i.post({ "url" => @url, 'send' => @path1, 'timeout' => @json["timeout"] })
+  #    want = JSON.parse(File.read(File.join(@wantfile, "doPOST.json")))['post']
+  #    got = r['post']
+  #    assert_equal(want, got)
+  #    s.shutdown()
+  #  }
   end
 
   def test_serverSH_5
-    # NEEDSWORK!!!  Need to figure out how to host RubyInterpreter to get these tests running
-    #BrowserPlus::Service.new(@service) { |s|
-    #  private_setup(s)
-    #  # Negative test cases.
-    #  @server.mount("/", OnlyPOST)
-    #  assert_raise(RuntimError) { r = @i.get({ "url" => @url }) }
-    #  s.shutdown()
-    #}
+  # NEEDSWORK!!!  ProviderService stuff needs to work
+  #  BrowserPlus::Service.new(@service, @providerDir) { |s|
+  #    private_setup(s)
+  #    # Negative test cases.
+  #    @server.mount("/", OnlyPOST)
+  #    assert_raise(RuntimError) { r = @i.get({ "url" => @url }) }
+  #    s.shutdown()
+  #  }
   end
 
   def test_serverSH_6
-    # NEEDSWORK!!!  Need to figure out how to host RubyInterpreter to get these tests running
-    #BrowserPlus::Service.new(@service) { |s|
-    #  private_setup(s)
-    #  # Negative test cases.
-    #  @server.mount("/", OnlyGET)
-    #  assert_raise(RuntimeError) { r = @i.post({ "url" => @url }) }
-    #  s.shutdown()
-    #}
+  # NEEDSWORK!!!  ProviderService stuff needs to work
+  #  BrowserPlus::Service.new(@service, @providerDir) { |s|
+  #    private_setup(s)
+  #    # Negative test cases.
+  #    @server.mount("/", OnlyGET)
+  #    assert_raise(RuntimeError) { r = @i.post({ "url" => @url }) }
+  #    s.shutdown()
+  #  }
   end
 end
