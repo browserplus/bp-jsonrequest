@@ -61,80 +61,80 @@ class TestJSONRequest < Test::Unit::TestCase
   end
 
   def test_load_service
-#    BrowserPlus.run(@service, @providerDir) { |s|
-#    }
+    BrowserPlus.run(@service, @providerDir) { |s|
+    }
   end
 
-#  # Require whatever server you want to, mount it,
-#  # and then verify that it has the same keys and
-#  # values as in your doGET.json and doPOST.json.
-#  def test_serverSH_1
-#    BrowserPlus::Service.new(@service, @providerDir) { |s|
-#      private_setup(s)
-#      r = @i.get({ "url" => @url })
-#      want = @wantjson['graham']
-#      got = r['graham']
-#      assert_equal(want, got)
-#      want = @wantjson['nutella']
-#      got = r['nutella']
-#      assert_equal(want, got)
-#      s.shutdown()
-#    }
-#  end
-#
-#  def test_serverSH_2
-#    BrowserPlus::Service.new(@service, @providerDir) { |s|
-#      private_setup(s)
-#      r = @i.get({ "url" => @url, 'timeout' => @json["timeout"] })
-#      want = @wantjson['graham']
-#      got = r['graham']
-#      assert_equal(want, got)
-#      want = @wantjson['nutella']
-#      got = r['nutella']
-#      assert_equal(want, got)
-#      s.shutdown()
-#    }
-#  end
-#
-#  def test_serverSH_3
-#    BrowserPlus::Service.new(@service, @providerDir) { |s|
-#      private_setup(s)
-#      r = @i.post({ "url" => @url, 'send' => @path1 })
-#      want = JSON.parse(File.read(File.join(@wantfile, "doPOST.json")))['post']
-#      got = r['post']
-#      assert_equal(want, got)
-#      s.shutdown()
-#    }
-#  end
-#
-#  def test_serverSH_4
-#    BrowserPlus::Service.new(@service, @providerDir) { |s|
-#      private_setup(s)
-#      r = @i.post({ "url" => @url, 'send' => @path1, 'timeout' => @json["timeout"] })
-#      want = JSON.parse(File.read(File.join(@wantfile, "doPOST.json")))['post']
-#      got = r['post']
-#      assert_equal(want, got)
-#      s.shutdown()
-#    }
-#  end
-#
-#  def test_serverSH_5
-#    BrowserPlus::Service.new(@service, @providerDir) { |s|
-#      private_setup(s)
-#      # Negative test cases.
-#      @server.mount("/", OnlyPOST)
-#      assert_raise(RuntimError) { r = @i.get({ "url" => @url }) }
-#      s.shutdown()
-#    }
-#  end
-#
-#  def test_serverSH_6
-#    BrowserPlus::Service.new(@service, @providerDir) { |s|
-#      private_setup(s)
-#      # Negative test cases.
-#      @server.mount("/", OnlyGET)
-#      assert_raise(RuntimeError) { r = @i.post({ "url" => @url }) }
-#      s.shutdown()
-#    }
-#  end
+  # Require whatever server you want to, mount it,
+  # and then verify that it has the same keys and
+  # values as in your doGET.json and doPOST.json.
+  def test_serverSH_1
+    BrowserPlus::Service.new(@service, @providerDir) { |s|
+      private_setup(s)
+      r = @i.get({ "url" => @url })
+      want = @wantjson['graham']
+      got = r['graham']
+      assert_equal(want, got)
+      want = @wantjson['nutella']
+      got = r['nutella']
+      assert_equal(want, got)
+      s.shutdown()
+    }
+  end
+
+  def test_serverSH_2
+    BrowserPlus::Service.new(@service, @providerDir) { |s|
+      private_setup(s)
+      r = @i.get({ "url" => @url, 'timeout' => @json["timeout"] })
+      want = @wantjson['graham']
+      got = r['graham']
+      assert_equal(want, got)
+      want = @wantjson['nutella']
+      got = r['nutella']
+      assert_equal(want, got)
+      s.shutdown()
+    }
+  end
+
+  def test_serverSH_3
+    BrowserPlus::Service.new(@service, @providerDir) { |s|
+      private_setup(s)
+      r = @i.post({ "url" => @url, 'send' => @path1 })
+      want = JSON.parse(File.read(File.join(@wantfile, "doPOST.json")))['post']
+      got = r['post']
+      assert_equal(want, got)
+      s.shutdown()
+    }
+  end
+
+  def test_serverSH_4
+    BrowserPlus::Service.new(@service, @providerDir) { |s|
+      private_setup(s)
+      r = @i.post({ "url" => @url, 'send' => @path1, 'timeout' => @json["timeout"] })
+      want = JSON.parse(File.read(File.join(@wantfile, "doPOST.json")))['post']
+      got = r['post']
+      assert_equal(want, got)
+      s.shutdown()
+    }
+  end
+
+  def test_serverSH_5
+    BrowserPlus::Service.new(@service, @providerDir) { |s|
+      private_setup(s)
+      # Negative test cases.
+      @server.mount("/", OnlyPOST)
+      assert_raise(RuntimError) { r = @i.get({ "url" => @url }) }
+      s.shutdown()
+    }
+  end
+
+  def test_serverSH_6
+    BrowserPlus::Service.new(@service, @providerDir) { |s|
+      private_setup(s)
+      # Negative test cases.
+      @server.mount("/", OnlyGET)
+      assert_raise(RuntimeError) { r = @i.post({ "url" => @url }) }
+      s.shutdown()
+    }
+  end
 end
